@@ -1,0 +1,8 @@
+import vovobulary as V
+import distributions as D
+
+class wrapper(object):
+     def __init__(self, s_file, s_string, t_file, t_string, lex_table_file):
+        s_voc = voc(s_file, s_string)
+        t_voc = voc(t_file, t_string)
+        
