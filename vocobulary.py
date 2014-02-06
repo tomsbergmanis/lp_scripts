@@ -32,7 +32,7 @@ class voc(object):
             except KeyError, e:
                 return ""
                 
-    def append(slef, ifile):
+    def append(self, ifile):
         
         with open(ifile, 'r') as f:
             file_content = f.read()

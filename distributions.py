@@ -10,9 +10,12 @@ class word_probability(object):
         distribution = {}
         counter = 0
         for line in lines:
+            
             if line == "":
                 continue
             element = line.split(" ")
+            if len(element) <= 1:
+                element = line.split("\t")
             distribution[element[0]] = float(element[1])
             counter += float(element[1])
             
