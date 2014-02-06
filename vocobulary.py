@@ -13,6 +13,8 @@ class voc(object):
             if line == "":
                 continue
             element = line.split(" ")
+            if len(element) <= 1:
+                element = line.split("\t")
             var_name = string+str(i)
             voc[element[0]] = var_name
             inv_voc[var_name] = element[0]
@@ -47,6 +49,8 @@ class voc(object):
             if line == "":
                 continue
             element = line.split(" ")
+            if len(element) <= 1:
+                element = line.split("\t")
             if element[0] in voc:
                 continue
             var_name = string+str(i)

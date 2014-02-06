@@ -29,7 +29,7 @@ class word_probability(object):
         try:
             return self.distribution[word]
         except KeyError, e:
-            print 'KeyError on \"' + word +"\"\n"
+            #print 'KeyError on \"' + word +"\"\n"
             return 0
         
 class conditional_probability(object):
@@ -41,9 +41,12 @@ class conditional_probability(object):
         distribution = {}
         counter = 0
         for line in lines:
+            
             if line == "":
                 continue
             element = line.split(" ")
+            if len(element) <= 1:
+                element = line.split("\t")
             if not element[0] in distribution:
                 distribution[element[0]] = {}
             distribution[element[0]][element[1]] = float(element[2])
@@ -61,4 +64,4 @@ class joint_probability(object):
         self.word_prob = word_probability(word_i_file)
         
     def getter(self, s_word, t_word):
-        return self.cond_prob.getter(s_word, t_word) * self.word_prob(t_word)
+        return self.cond_prob.getter(s_word, t_word) * self.word_prob.getter(t_word)
