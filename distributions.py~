@@ -50,4 +50,5 @@ class conditional_probability(object):
         try:
             return self.distribution[s_word][t_word]
         except KeyError, e:
+            print 'KeyError on \"' + s_word +" "+ t_word +"\"\n"
             return 0
