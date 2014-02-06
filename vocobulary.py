@@ -57,3 +57,8 @@ class voc(object):
         self.voc = voc
         self.inv_voc = inv_voc
     
+    def voc_items(self):
+        return self.voc.iteritems()
+        
+    def inv_voc_items(self):
+        return self.inv_voc.iteritems()    
