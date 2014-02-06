@@ -32,7 +32,7 @@ class voc(object):
             except KeyError, e:
                 return ""
                 
-    def append(slef, ifile,  string):
+    def append(slef, ifile):
         
         with open(ifile, 'r') as f:
             file_content = f.read()
@@ -40,6 +40,7 @@ class voc(object):
         lines = file_content.split("\n")
         voc = self.voc
         inv_voc = self.inv_voc
+        string = self.string
         i = self.i
         for line in lines:
             i += 1
