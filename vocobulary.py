@@ -9,15 +9,19 @@ class voc(object):
         inv_voc = {}
         i = 0
         for line in lines:
-            i += 1
+	    print line            
             if line == "":
-                continue
+                print "tuksa linija"
+		continue
             element = line.split(" ")
             if len(element) <= 1:
+		print "ar speisu nesanaca"
                 element = line.split("\t")
-            var_name = string+str(i)
-            voc[element[0]] = var_name
-            inv_voc[var_name] = element[0]
+	    if int(element[1]) > 0:
+                i += 1
+	        var_name = string+str(i)
+                voc[element[0]] = var_name
+                inv_voc[var_name] = element[0]
             
         self.i = i
         self.string = string
