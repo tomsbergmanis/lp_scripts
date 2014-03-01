@@ -16,12 +16,14 @@ class word_probability(object):
             element = line.split(" ")
             if len(element) <= 1:
                 element = line.split("\t")
-            distribution[element[0]] = float(element[1])
-            counter += float(element[1])
+	    if len(element) <= 1:
+		continue
+            if float(element[1] > 1):
+	        distribution[element[0]] = float(element[1])
+                counter += float(element[1])
             
         for e in distribution:
-            distribution[e] = distribution[e] / counter
-            
+            distribution[e] = distribution[e] / counter  
         self.distribution = distribution 
         
     def getter(self, word):
@@ -57,6 +59,7 @@ class conditional_probability(object):
             return self.distribution[s_word][t_word]
         except KeyError, e:
             return 0
+    
             
 class joint_probability(object):
     def __init__(self, cond_i_file, word_i_file):
