@@ -16,7 +16,7 @@ class word_probability(object):
                 element = line.split("\t")
             if len(element) <= 1:
                 continue
-            if float(element[1] > 1):
+            if float(element[1]) > 1:
                 distribution[element[0]] = float(element[1])
                 counter += float(element[1])
 

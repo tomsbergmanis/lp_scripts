@@ -86,7 +86,8 @@ class wrapper(object):
                 continue
             else:
                 words = self.get_words(vn[1:])
-              
+		print words[0] + " " + words[1] + " " + vel[-1]
+
     def get_words(self,s):         #xs68t10
        varl = s.split(self.t_str)
        tvar = self.t_str + varl[-1]
@@ -105,7 +106,7 @@ if __name__ == "__main__":
     a.create_of_c()
     print "Wrpapping is done."
     print "Solving LP..."
-    os.system(".././lp_solve " + sys.argv[3] + "> " + sys.argv[3]+"_out")
+    os.system("/home/toms/lp/./lp_solve " + sys.argv[3] + "> " + sys.argv[3]+"_out")
     print "Done with LP"
     a.unwrap(sys.argv[3]+"_out")
 
