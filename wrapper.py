@@ -78,6 +78,7 @@ class wrapper(object):
         f = open(wfile, "r")
         fst = f.read()
         vlist = fst.split("\n")
+        o = open(wfile+"_UW", "w")
         for vl in vlist:
             vel = vl.split(" ")
             vn = vel[0]
@@ -86,7 +87,7 @@ class wrapper(object):
                 continue
             else:
                 words = self.get_words(vn[1:])
-		print words[0] + " " + words[1] + " " + vel[-1]
+                o.write(words[1] + " " + words[0] + " " + vel[-1])
 
     def get_words(self,s):         #xs68t10
        varl = s.split(self.t_str)
