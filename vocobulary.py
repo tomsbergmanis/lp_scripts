@@ -9,7 +9,7 @@ class voc(object):
         inv_voc = {}
         i = 0
         for line in lines:
-#           print line            
+            print line            
             if line == "":
                 print "tuksa linija"
                 continue

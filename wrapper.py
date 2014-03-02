@@ -11,7 +11,9 @@ class wrapper(object):
         self.MD_S = D.word_probability(wiki_s_file)
         self.MD_T = D.word_probability(wiki_t_file)
 
-        self.V_S = V.voc(wiki_s_file, s_str)
+       	print wiki_s_file 
+	self.V_S = V.voc(wiki_s_file, s_str)
+	print wiki_t_file
         self.V_T = V.voc(wiki_t_file, t_str)
         self.s_str = s_str
         self.t_str = t_str
@@ -100,6 +102,7 @@ class wrapper(object):
 
 if __name__ == "__main__":
     print "Wrpapping..."
+    print sys.argv
     a = wrapper("/home/toms/lp/data/en_unigrams", "/home/toms/lp/data/lv_unigrams", "/home/toms/lp/data/lex.e2f", sys.argv[1], sys.argv[2], "t", "s", sys.argv[3])
     a.create_objective()
     a.create_s_m()
@@ -110,4 +113,5 @@ if __name__ == "__main__":
     os.system("/home/toms/lp/./lp_solve " + sys.argv[3] + "> " + sys.argv[3]+"_out")
     print "Done with LP"
     a.unwrap(sys.argv[3]+"_out")
+
 
